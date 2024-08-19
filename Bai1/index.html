@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <div id="result"></div>
+
+    <script>
+        // 1. Store Mark's and John's mass and height in variables
+        let markMass = 78; // kg
+        let markHeight = 1.69; // meters
+        let johnMass = 92; // kg
+        let johnHeight = 1.95; // meters
+
+        // 2. Calculate both their BMIs using the formula
+        // Version 1: BMI = mass / (height * height)
+        let markBMI = markMass / (markHeight * markHeight);
+        let johnBMI = johnMass / (johnHeight * johnHeight);
+
+        // Version 2: BMI = mass / height ** 2
+        // let markBMI = markMass / markHeight ** 2;
+        // let johnBMI = johnMass / johnHeight ** 2;
+
+        // 3. Create a Boolean variable 'markHigherBMI'
+        let markHigherBMI = markBMI > johnBMI;
+
+        // Display results
+        let resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+            <p>Mark's BMI: ${markBMI.toFixed(2)}</p>
+            <p>John's BMI: ${johnBMI.toFixed(2)}</p>
+            <p>Does Mark have a higher BMI than John? ${markHigherBMI}</p>
+        `;
+    </script>
+</body>
+</html>
